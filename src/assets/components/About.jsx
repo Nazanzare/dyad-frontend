@@ -49,7 +49,7 @@ export default function About() {
                transition-shadow duration-300"
               >
                 <p
-                  className="text-cyan-400 font-semibold text-lg mb-3
+                  className="text-cyan-500 font-semibold text-lg mb-3
                   drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]"
                 >
                   ما عضوی از دایاد هستیم
