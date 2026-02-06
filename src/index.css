@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "tailwindcss";
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Light.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Light.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/public/fonts/woff/YekanBakhFaNum-ExtraBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@theme {
+  --color-bg: #0f1220;
+  --color-card: #1c1f36;
+  --color-primary: #8b5cf6;
+  --color-primary-dark: #6d28d9;
+  --color-muted: #b3b6d1;
+}
+
+/* Base */
+@layer base {
+  body {
+    background: var(--color-bg);
+    direction: rtl;
+    font-family: "YekanBakh", system-ui, sans-serif;
+    color: white;
+  }
+}
