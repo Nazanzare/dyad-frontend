@@ -1,7 +1,7 @@
 function Buttons({
   text,
   size = "lg",
-  color = "blueFilled",
+  color = "",
   icon: Icon,
   onClick,
   isLoading = false,
