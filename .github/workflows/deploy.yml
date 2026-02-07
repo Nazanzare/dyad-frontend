@@ -1,4 +1,4 @@
-name: Deploy Vite React to FTP
+name: Deploy React (Vite) to FTP
 
 on:
   push:
@@ -10,19 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # 1️⃣ گرفتن سورس کد
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # 2️⃣ نصب Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3️⃣ نصب وابستگی‌ها
       - name: Install dependencies
         run: npm install
 
+      # 4️⃣ بیلد پروژه Vite
       - name: Build project
         run: npm run build
 
-      - name: Upload to FTP
+      # 5️⃣ دیپلوی خروجی dist روی FTP (FTPS + Passive)
+      - name: Upload to FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+
+          protocol: ftps
+          port: 21
+          security: loose
+          passive: true
+          timeout: 600000
+
           local-dir: dist/
           server-dir: /
