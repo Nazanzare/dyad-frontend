@@ -1,4 +1,4 @@
-name: Deploy React to FTP
+name: Deploy Vite React to FTP
 
 on:
   push:
@@ -15,16 +15,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Upload to FTPS
+      - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
           local-dir: dist/
-          server-dir: /
+          server-dir: /domains/dyadcode.ir/public_html/
